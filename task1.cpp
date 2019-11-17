@@ -21,14 +21,21 @@ int main()
 	cout << "Введите K и L: ";
 	cin >> k >> l;
 
-	for (i = k - 1; i < l; i++) 
-	{
-		sum = sum + arr[i];
+	if (1 <= k && k <= l && l <= n)
+	{ 
+		for (i = k - 1; i < l; i++)
+		{
+			sum = sum + arr[i];
+		}
+
+		sum = sum / (l - k + 1);
+
+		cout << "Среднее арифметическое чисел равно " << sum << endl;
 	}
-
-	sum = sum / (l - k + 1);
-
-	cout << "Среднее арифметическое чисел равно " << sum << endl;
+	else
+	{
+		cout <<"Вы не следуете условию: 1 <= K <= L <= N. Введите переменные еще раз, следуя условиям." << endl;
+	}
 
 	system("pause");
 	return 0;
